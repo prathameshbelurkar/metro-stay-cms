@@ -11,17 +11,28 @@ export async function getCabins() {
   return data;
 }
 
-export async function createCabin(newCabin) {
+export async function createEditCabin(newCabin, id) {
+  // Managing image name and path
+  const hasImagePath = newCabin.image?.startsWith?.(supabaseUrl);
+
   const imageName = `${Math.random()}-${encodeURIComponent(
-    newCabin.image.name.replaceAll("/", "")
+    newCabin?.image?.name?.replaceAll("/", "")
   )}`;
+  const imagePath = hasImagePath
+    ? newCabin.image
+    : `${supabaseUrl}/storage/v1/object/public/cabin-images/${imageName}`;
 
-  // eslint-disable-next-line
-  const imagePath = `${supabaseUrl}/storage/v1/object/public/cabin-images/${imageName}`;
-
-  const { data, error } = await supabase
-    .from("cabins")
-    .insert([{ ...newCabin, image: imagePath }]);
+  // Creating or editing cabin
+  let query = supabase.from("cabins");
+  if (!id) {
+    query = query
+      .insert([{ ...newCabin, image: imagePath }])
+      .select()
+      .single();
+  } else {
+    query = query.update({ ...newCabin, image: imagePath }).eq("id", id);
+  }
+  const { data, error } = await query;
   if (error) {
     console.error(error);
     throw new Error("Cabins could not be loaded");
