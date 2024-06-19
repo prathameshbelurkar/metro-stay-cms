@@ -37,7 +37,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
     createCabin({ ...data, image }, { onSuccess: () => reset() });
   }
 
-  function onError(_) {}
+  function onError() {}
 
   return (
     <Form onSubmit={handleSubmit(onSubmit, onError)}>
