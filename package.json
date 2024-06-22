@@ -1,9 +1,10 @@
 {
   "name": "metro-stay",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
   "author": "Prathamesh Belurkar",
+  "description": "Metro stay is a remote booking software for hotel business to manage guests and resources with scale",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
