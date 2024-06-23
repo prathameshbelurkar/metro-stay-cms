@@ -16,6 +16,8 @@ import Settings from "./pages/Settings";
 import Users from "./pages/Users";
 import PageNotFound from "./pages/PageNotFound";
 
+import { isProduction } from "./utils/helpers";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -27,7 +29,7 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={false} />
+      {!isProduction && <ReactQueryDevtools initialIsOpen={false} />}
 
       <GlobalStyles />
 
