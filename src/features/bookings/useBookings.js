@@ -18,6 +18,8 @@ export function useBookings() {
   const [field, direction] = sortByRaw.split("-");
   const sortBy = { field, direction };
 
+  // PAGINATION
+
   const {
     isLoading,
     error,
