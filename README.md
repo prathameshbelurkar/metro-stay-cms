@@ -1,6 +1,21 @@
-# Metro-Stay | Modern &mdash; Booking
+<h1 align="center">Metro-Stay | Booking &mdash; CMS</h1>
 
-> Under Dev
+<br>
+
+<div align="center">
+  <img src="./public/dashboard.jpg" alt="Dashboard img" width=300>
+</div>
+
+<br>
+
+**Booking Content Management System (CMS)** designed to simplify the management of rental properties. It offers a sleek and intuitive dashboard that provides comprehensive analytics and interactive charts. Users can easily manage full CRUD (Create, Read, Update, Delete) functionality. The application features a dark mode for better user experience and is built using modern technologies including React, React-Query, Styled Components, Recharts, and Vite.
+
+## Features
+
+- **Dashboard with Analytics**: View important metrics and data visualizations through pie and area charts.
+- **Comprehensive CRUD Operations**: Perform Create, Read, Update, and Delete operations on cabins, bookings, settings, avatars, usernames, and passwords.
+- **Dark Mode**: Switch to a dark-themed user interface for a comfortable viewing experience, especially in low-light environments.
+- **Modern Technologies**: Built with React for a robust and responsive UI, React-Query for efficient data fetching, Styled Components for scoped and dynamic styling, Recharts for powerful data visualizations, and Vite for fast development and build times.
 
 <br>
 
