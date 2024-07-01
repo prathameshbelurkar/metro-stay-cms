@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-import Logo from "../ui/Logo";
 import Heading from "../ui/Heading";
 
 import LoginForm from "../features/authentication/LoginForm";
@@ -15,10 +14,21 @@ const LoginLayout = styled.main`
   background-color: var(--color-grey-50);
 `;
 
+const StyledLogo = styled.div`
+  text-align: center;
+`;
+
+const Img = styled.img`
+  height: 9.6rem;
+  width: auto;
+`;
+
 function Login() {
   return (
     <LoginLayout>
-      <Logo />
+      <StyledLogo>
+        <Img src="/me.png" alt="Logo" />
+      </StyledLogo>
       <Heading as="h4">Log in to your account</Heading>
       <LoginForm />
     </LoginLayout>
